@@ -33,10 +33,10 @@
                                         <th scope="row">{{$category->id}}</th>
                                         <td>{{$category->category_name}}</td>
                                         <td>{{$category->user_id}}</td>
-                                        <td>{{$category->created_at/*->diffForHumans()*/}}</td>
+                                        <td>{{$category->created_at->diffForHumans()}}</td>
                                         <td>
                                             <a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">Edit</a>
-                                            <a href="" class="btn btn-danger">Delete</a>
+                                            <a href="{{url('category/delete/'.$category->id)}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -57,7 +57,7 @@
                                         <label for="CategoryName" class="form-label">Category Name</label>
                                         <input type="text" class="form-control" name="category_name">
                                         @error('category_name')
-                                            <span clss="text-danger">{{$message}}</span>
+                                            <span class="text-danger">{{$message}}</span>
                                         @enderror   
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>

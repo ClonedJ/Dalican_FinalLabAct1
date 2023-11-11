@@ -31,7 +31,7 @@ class CategoryController extends Controller
         $categories = Category::find($id);
         return view('admin.category.edit',compact('categories'));
     }
-
+    
     
     
     public function Update(Request $request, $id) {
@@ -40,5 +40,10 @@ class CategoryController extends Controller
             'user_id' => Auth::user()->id,
         ]);
         return Redirect()->route('AllCat')->with('success','Category Inserted Successfully');
+    }
+    
+    public function Delete(Request $request, $id) {
+        Category::find($id)->delete();
+        return Redirect()->route('AllCat')->with('success','Category Deleted Successfully');
     }
 }
