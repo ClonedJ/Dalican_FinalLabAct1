@@ -28,3 +28,7 @@ Route::middleware([
         return view('dashboard', compact('users'));
     })->name('dashboard');
 });
+
+Route::get('/category', function () {
+    return view('admin.category.category');
+})->name('AllCat');
