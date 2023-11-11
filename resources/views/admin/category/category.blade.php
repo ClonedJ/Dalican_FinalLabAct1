@@ -7,8 +7,8 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="container">
-                <div class="row">
+            <div class="container row">
+                <div class="col-md-8 card">
                     <table class="table">
                         <thead>
                             <tr>
@@ -18,6 +18,16 @@
                             <th scope="col">Created At</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach ($categories as $category)
+                                <tr>
+                                    <th scope="row">{{$category->id}}</th>
+                                    <td>{{$category->category_name}}</td>
+                                    <td>{{$category->user_id}}</td>
+                                    <td>{{$category->created_at}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/category', function () {
-    return view('admin.category.category');
-})->name('AllCat');
+Route::get('/category', [CategoryController::class,'index'])->name('AllCat');
